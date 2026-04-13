@@ -1,0 +1,210 @@
+@import url("https://cdn.jsdelivr.net/gh/fonts-archive/Paperlogy/subsets/Paperlogy-dynamic-subset.css");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+ul {
+  list-style: none;
+}
+img {
+  width: 100%;
+  display: block;
+}
+body {
+  width: 100%;
+  height: 100%;
+  font-family: "Paperlogy";
+}
+
+/* header */
+header {
+  background-color: #000;
+  color: #fff;
+  position: fixed;
+  width: 100%;
+  z-index: 101;
+}
+header ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+header ul li {
+  width: calc(100% / 4);
+}
+header ul li a {
+  width: 100%;
+  padding: 1rem 0;
+  display: inline-block;
+}
+header ul li:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+/* container */
+#container {
+  width: 100%;
+  height: 100vh;
+}
+#container section {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+/* page1 */
+.page1 div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+}
+.page1 h2 {
+  margin-bottom: 2rem;
+  transform: translateY(100px);
+  opacity: 0;
+  transition: 0.5s;
+  transition-delay: 0.1s;
+}
+.page1 img {
+  width: 500px;
+  height: 300px;
+  object-fit: cover;
+  transform: translateY(100px);
+  opacity: 0;
+  transition: 0.5s;
+  transition-delay: 0.1s;
+}
+.page1.on h2 {
+  transform: translateX(0px);
+  opacity: 1;
+}
+.page1.on img {
+  transform: translateX(0px);
+  opacity: 1;
+}
+
+/* page2 */
+.page2 div {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.page2 h2 {
+  color: #fff;
+  font-size: 3em;
+  margin-bottom: 2rem;
+}
+.page2 ul {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+.page2 li {
+  width: calc((100% - 4rem) / 3);
+  overflow: hidden;
+  width: 300px;
+  height: 500px;
+  position: relative;
+  transform: translateY(100px);
+  opacity: 0;
+  border-radius: 20px;
+}
+.page2 li > a > div {
+  width: 100%;
+  height: 100%;
+}
+.page2 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: inline-block;
+}
+.page2 p {
+  width: 100%;
+  position: absolute;
+  text-align: center;
+  bottom: 3rem;
+  font-size: 1.5em;
+}
+/* page2 li에 움직임 주기 */
+.page2.on li:nth-child(1) {
+  transform: translateY(0px);
+  transition: 0.3s;
+  opacity: 1;
+}
+.page2.on li:nth-child(2) {
+  transform: translateY(0px);
+  transition: 0.6s;
+  opacity: 1;
+}
+.page2.on li:nth-child(3) {
+  transform: translateY(0px);
+  transition: 0.9s;
+  opacity: 1;
+}
+
+/* 배경스타일 줌 */
+.page1 {
+  background-image: url("../img/pic1.jpg");
+  background-color: #599ce9;
+}
+.page2 {
+  background-image: url("../img/pic2.jpg");
+  background-color: #e95995;
+}
+.page3 {
+  background-image: url("../img/pic3.jpg");
+  background-color: #e9e959;
+}
+.page4 {
+  background-image: url("../img/pic4.jpg");
+  background-color: #59e989;
+}
+/* #container h2 {
+  font-size: 5em;
+  color: #fff;
+} */
+#navi {
+  position: fixed;
+  z-index: 1001;
+  right: 3rem;
+  top: 50%;
+}
+#navi li {
+  width: 5px;
+  height: 20px;
+  margin-bottom: 1rem;
+  background-color: #fff;
+  cursor: pointer;
+}
+#navi li.navi_on {
+  background-color: #e95995;
+}
+#navi li span {
+  position: absolute;
+  font-size: 1rem;
+  right: 0;
+  transform: translateX(-50%);
+  display: none;
+}
+#navi li.navi_on span {
+  display: block;
+}
